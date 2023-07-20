@@ -55,8 +55,55 @@
           <button class="button hero" data-modal-open>Заказать услугу</button>
           <div class="backdrop is-hidden" data-modal>
             <div class="modal">
-              <button data-modal-close></button>
+
+              <div class="close-button">
+                <button class="test" data-modal-close>
+                  <svg class="close-icon">
+                    <use id="close" href="./images/sprite.svg#close"></use>
+                  </svg>
+                </button>
+  
+              </div>
+
+              <form class="modal-form">
+                <div class="form-group">
+                <legend class="group-title">Оставьте свои данные, мы вам перезвоним</legend>
+                <ul class="form-field">
+                    <li>        
+                        <label for="text">Имя</label>
+                        <input type="text" name="username" placeholder="" id="text">
+                      </li>
+                      <li>        
+                        <label for="tel">Телефон</label>
+                        <input type="tel" name="phone" id="tel"/>
+                      </li>
+                      <li>        
+                        <label for="mail">Почта</label>
+                        <input type="email" name="email" id="mail"/>
+                      </li>
+                </ul>
+        
+                <div class="feedback">
+                    <label for="feedback">Комментарий</label>                         
+                    <textarea name="feedback" placeholder="Введите текст" id="feedback"></textarea>
+                </div>
+        
+                
+                <div class="checkbox">
+                    <input type="checkbox" name="agreement" id="checkbox"/>
+                    <label for="checkbox">Соглашаюсь с рассылкой и принимаю <span><a href="" class="polyces">Условия договора</a></span></label>
+                </div>
+        
+                <div class="button-submit">
+                    <button class="btn button" type="submit">Отправить</button>
+                </div>
+        
+                  </div>
+                
+              </form>
+
             </div>
+
           </div>
       </section>
     </div>
@@ -323,15 +370,32 @@
                 <use href="./images/sprite.svg#facebook"></use>
               </svg>
             </a></li>
-            <li class="footer-li" ><a class="footer-link" href="" aria-label="Ссылка на Linkedin">
+            <li class="footer-li" >
+              <a class="footer-link" href="" aria-label="Ссылка на Linkedin">
               <svg class="icon" width="20px" height="20px">
                 <use href="./images/sprite.svg#linkedin"></use>
               </svg>
-            </a></li>
+            </a>
+          </li>
           </ul>
       </div>
-
-      </div>
+      
+      <form class="form">
+        <legend class="form-title">Подпишитесь на рассылку</legend>
+      
+        <div class="form-center">
+          <label>
+            <input class="form-mail" type="email" name="email" placeholder="E-mail" />
+          </label>
+          
+          <button class="button form-button" type="submit">Подписаться
+            <svg class="button-icon" width="24px" height="24px">
+              <use href="./images/sprite.svg#icon-send"></use>
+            </svg></button>
+        </div>
+    </form>
+      
+  </div>
    </footer>
    <script src="./js/modal.js"></script>
 </body>

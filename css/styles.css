@@ -231,13 +231,13 @@ header nav {
     transform: translate(-50%, -50%)  scale(1);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.close-button {
+.close {
     display: flex;
     justify-content: flex-end;
     margin-right: 8px;
     margin-top: 8px;
 }
-.test {
+.button-close {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -254,9 +254,10 @@ header nav {
 
 .close-icon {
     width: 18px;
-    height: 15px;
+    height: 18px;
 }
-.close-icon:hover {
+
+.button-close:hover .close-icon {
     fill: var(--acent-color);
 }
 
@@ -324,18 +325,22 @@ header nav {
 
 }
 .form-field li {
+    position: relative;
     list-style: none;
     margin-bottom: 10px;
 }
 
 .form-field input {
     margin-top: 4px;
-    width: 100%;
+    width: 406px;
     height: 40px;
     padding: 0;
+    padding-left: 42px;
 
     border-radius: 4px;
     border: 1px solid rgba(33, 33, 33, 0.20);
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field label {
@@ -370,24 +375,66 @@ header nav {
     border-radius: 4px;
     border: 1px solid rgba(33, 33, 33, 0.20);
 
-    color: rgba(117, 117, 117, 0.50);
     font-family: inherit;
     font-size: 12px;
     font-weight: 400;
     letter-spacing: 0.12px;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.feedback textarea:hover, .feedback textarea:focus {
+    border: 1px solid #2196F3;
+    outline: 0;
 }
 
 .checkbox {
     display: flex;
     align-items: center;
-    justify-content: center;
     margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .checkbox input {
+    /* Скрывает чек-бокс */
+    appearance: none;   
+
+    /* position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden; */
+}
+.icon-checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-sizing: border-box; */
+    display: inline-block;
     margin-right: 8.38px;
+
     width: 16px;
     height: 15px;
+    border-radius: 3px;
+    border: 2px solid var(--title-text-color);
+    
 }
+.checkbox input:checked + .icon-checked {
+    /* box-sizing: border-box; */
+    border: 2px solid var(--acent-color);
+    width: 16px;
+    height: 15px;
+
+    background-color: var(--acent-color);
+    /* background-image: url(../images/icon-check.svg); */
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-origin: content-box; */
+}
+
 .checkbox label {
     color: #757575;
     font-family: inherit;
@@ -395,6 +442,7 @@ header nav {
     font-weight: 400;
     line-height: 24px; 
     letter-spacing: 0.42px;
+    padding-top: 2px;
 }
 .polyces {
     color: var(--acent-color);
@@ -408,6 +456,7 @@ header nav {
     align-items: center;
     margin-bottom: 40px;
 }
+
 .button-submit button {
     color: var(--white-text-color);
     width: 186px;
@@ -419,7 +468,25 @@ header nav {
     border: 0;
 
     padding: 0;
+}
 
+.icon-phone, .icon-person, .icon-email {
+    position: absolute;
+    bottom: 11px;
+    left: 12px;
+
+    width: 18px;
+    height: 18px;
+
+    fill: var(--title-text-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-field li:focus .icon-phone, .form-field li:hover .icon-phone, .form-field li:focus .icon-person, .form-field li:hover .icon-person,.form-field li:focus .icon-email, .form-field li:hover .icon-email{
+    fill: var(--acent-color); 
+}
+.form-field input:focus, .form-field input:hover {
+    border: 1px solid #2196F3;
+    outline: 0;
 }
 /* button */
 .button {
